@@ -18,7 +18,7 @@ if (process.env.NODE_ENV === "production") {
 
 const mongoose = require("mongoose");
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/activities", {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/grader", {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
