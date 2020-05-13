@@ -1,4 +1,9 @@
 const express = require("express");
+const mysql = require("mysql");
+const dotenv = require("dotenv")(
+    process.env.DB_PASSWORD
+);
+const pass = dotenv();
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -16,18 +21,17 @@ if (process.env.NODE_ENV === "production") {
 // app.use(passport.initialize())
 // app.use(require('./routes'))
 
-const mongoose = require("mongoose");
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/grader", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
+const connection = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: process.env.DB_PASSWORD,
+    database: "easy-grade-db"
+});
 
-mongoose.connection
-  .once("open", () => console.log("connected"))
-  .on("error", (error) => {
-    console.log("err: ", error)
-  })
+connection.connect(err => {
+    (err) ? console.log("error", err) : console.log("connection");
+});
 
 app.listen(PORT, function () {
 
