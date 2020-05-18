@@ -21,15 +21,6 @@ if (process.env.NODE_ENV === "production") {
 // app.use(passport.initialize())
 // app.use(require('./routes'))
 
-
-const connection = mysql.createConnection({
-    host: "localhost",
-    port: 3306,
-    user: "root",
-    password: process.env.DB_PASSWORD,
-    database: "easyGrade_DB"
-});
-
 connection.connect(err => {
     (err) ? console.log("error", err) : console.log("connection");
 });
