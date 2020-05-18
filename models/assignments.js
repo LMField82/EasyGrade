@@ -15,5 +15,4 @@ const Assignment = sequelize.define('Assignment', {
 }, {
     //other table options
 });
-
 console.log(Assignment === sequelize.models.Assignment);
