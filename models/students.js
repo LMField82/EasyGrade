@@ -1,9 +1,5 @@
 const { Sequelize, DataTypes } = require('sequelize');
-const sequelize = new Sequelize('sqlite::memory:', {
-    define: {
-        freezeTableName: true
-    }
-});
+const sequelize = new Sequelize('sqlite::memory:');
 
 const Student = sequelize.define('Student', {
     student_id: {
