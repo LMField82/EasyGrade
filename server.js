@@ -26,8 +26,8 @@ if (process.env.NODE_ENV === "production") {
 // app.use(require('./routes'))
 
 //Routes
-require("./routes/api-routes.js")(app);
-require("./routes/html-routes.js")(app);
+require("./routes/api/api-routes.js")(app);
+//require("./routes/html-routes.js")(app);
 
 //Syncing sequelize models and starting express app
 db.Sequelize.sync({ force: true }).then(() => {
