@@ -26,8 +26,6 @@ FOREIGN KEY(assignment_id) REFERENCES Assignments (assignment_id),
 FOREIGN KEY(student_id) REFERENCES Students (student_id)
 );
 
-SELECT Students.student_id, Students.first_name, Students.last_name, Assignments.assignment_id, Grades.grade FROM Students JOIN Grades ON Students.student_id = Grades.student_id  JOIN Assignments ON Grades.assignment_id = Assignments.assignment_id;
-
 INSERT INTO Students (student_id, first_name, last_name)
 VALUES ("1", "Yolanda", "Hernandez"), ("2", "Zoe", "Simmons"), ("3", "Thomas", "Simpson"), ("4", "Keeley", "Aaron"), ("5", "Bradley", "Cooper"),
 ("6", "Wendy", "Westcott"), ("7", "Kenny", "Robins");
@@ -41,3 +39,5 @@ VALUES ("1", "1", "4"), ("2", "1", "4"), ("3", "1", "3"), ("4", "1", "3"), ("5",
 SELECT * FROM Students;
 SELECT * FROM Assignments;
 SELECT * FROM Grades;
+
+SELECT Students.student_id, Students.first_name, Students.last_name, Assignments.assignment_id, Grades.grade FROM Students JOIN Grades ON Students.student_id = Grades.student_id  JOIN Assignments ON Grades.assignment_id = Assignments.assignment_id;

@@ -26,11 +26,11 @@ if (process.env.NODE_ENV === "production") {
 // app.use(require('./routes'))
 
 //Routes
-require("./routes/api/api-routes.js")(app);
+require("./routes")
 //require("./routes/html-routes.js")(app);
 
 //Syncing sequelize models and starting express app
-db.Sequelize.sync({ force: true }).then(() => {
+db.sequelize.sync({ force: true }).then(function() {
   connection.connect(err => {
     (err) ? console.log("error", err) : console.log("connection");
   });
