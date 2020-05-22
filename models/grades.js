@@ -13,10 +13,25 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.TEXT,
             allowNull: false,
         },
+        grade: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
         final_grade: {
-            type: DataTypes.STRING,
-            primaryKey: true
+            type: DataTypes.INTEGER,
+            primaryKey: true,
+            defaultValue: null
         }
     });
+
+    Grade.associate = function(models) {
+        Grade.belongsTo(models.Student, {
+            foreignKey: {
+                allowNull: false
+            }
+        });
+    };
+
+
     return Grade;
 }

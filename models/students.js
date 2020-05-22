@@ -20,11 +20,14 @@ module.exports = function(sequelize, DataTypes) {
         }
     });
 
-    // Student.associate = function(models) {
-    //     Student.hasMany(models.Grade.grade)
-       
+    Student.associate = function(models) {
+        Student.hasMany(models.Grade, {
+            onDelete: "CASCADE"
+        });
+        Student.hasMany(models.Assignment, {
+            onDelete: "CASCADE"
+        });
+    };
 
-        
-    // }
     return Student;
 }

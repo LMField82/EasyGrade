@@ -1,7 +1,7 @@
 {
     "name":"Easy Grade",
     "short_name":"Easy Grade",
-    "proxy": "http://localhost:3001/",
+    "proxy": "http://localhost:3001",
     "icons":[
         {
             "src":"/android-chrome-192x192.png",

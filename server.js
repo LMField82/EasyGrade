@@ -30,10 +30,7 @@ require("./routes")
 //require("./routes/html-routes.js")(app);
 
 //Syncing sequelize models and starting express app
-db.sequelize.sync({ force: true }).then(function() {
-  connection.connect(err => {
-    (err) ? console.log("error", err) : console.log("connection");
-  });
+db.sequelize.sync(/*{ force: true }*/).then(function() {
   app.listen(PORT, function () {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!!!`);
   });

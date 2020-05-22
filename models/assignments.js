@@ -12,5 +12,14 @@ module.exports = function(sequelize, DataTypes) {
             allowNull: false
         }
     });
+
+    Assignment.associate = function(models) {
+        Assignment.belongsTo(models.Student, {
+            foreignKey: {
+                allowNull: false
+            }
+        });
+    }
+
     return Assignment;
 }
