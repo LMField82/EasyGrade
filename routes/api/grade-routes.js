@@ -1,12 +1,13 @@
-db = require("../../models") 
+const router = require("express").Router();
+const gradeController = require("../../controllers/gradeController.js");
 
-module.exports = function(app) {
-    //get route to pull all grades data
-    //matches to /api/grades/
-    app.get("/", function(req, res) {
-        db.Grades.findAll({})
-            .then(function(dbGrade) {
-                res.json(dbGrade);
-            });
-    });
-}
+//matches with /api/grades/
+router.route("/")
+    .get(gradeController.findAll)
+    .get(gradeController.findById)
+    .post(gradeController.create)
+    .update(gradeController.update)
+    .destroy(gradeController.destroy)
+
+
+module.exports = router;
