@@ -1,12 +1,14 @@
 const router = require("express").Router();
-//const gradeController = require("../../controllers/gradeController.js");
+const gradeController = require("../../controllers/gradeController.js");
 
 //matches with /api/grades/
 router.route("/")
-    .get(gradeController.findAll)
-    .get(gradeController.findById)
+    .get(gradeController.findAll)  
     .post(gradeController.create)
-    .update(gradeController.update)
+
+router.route("/:id")
+    .get(gradeController.findById)
+    .put(gradeController.update)    
     .destroy(gradeController.destroy)
 
 
