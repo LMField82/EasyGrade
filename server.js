@@ -1,6 +1,6 @@
 //Dependencies
 const express = require("express");
-const mysql = require("mysql");
+// const mysql = require("mysql");
 
 //Setting up express app
 const app = express();
@@ -26,11 +26,12 @@ if (process.env.NODE_ENV === "production") {
 // app.use(require('./routes'))
 
 //Routes
-require("./routes")
+// require("./routes")
+app.use(require("./routes"));
 //require("./routes/html-routes.js")(app);
 
 //Syncing sequelize models and starting express app
-db.sequelize.sync(/*{ force: true }*/).then(function() {
+db.sequelize.sync({/* force: true */}).then(function() {
   app.listen(PORT, function () {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!!!`);
   });

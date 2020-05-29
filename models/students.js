@@ -1,12 +1,7 @@
 module.exports = function(sequelize, DataTypes) {
 
     const Student = sequelize.define('Student', {
-        student_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            autoIncrement: true,
-            primaryKey: true
-        },
+
         first_name: {
             type: DataTypes.STRING,
             allowNull: false
@@ -22,9 +17,6 @@ module.exports = function(sequelize, DataTypes) {
 
     Student.associate = function(models) {
         Student.hasMany(models.Grade, {
-            onDelete: "CASCADE"
-        });
-        Student.hasMany(models.Assignment, {
             onDelete: "CASCADE"
         });
     };

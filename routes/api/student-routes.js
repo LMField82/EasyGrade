@@ -4,10 +4,10 @@ const studentController = require("../../controllers/studentController.js");
 //matches with /api/students/
 router.route("/")
     .get(studentController.findAll)
-    .get(studentController.findById)
     .post(studentController.create)
-    .destroy(studentController.destroy)
-
+    // .destroy(studentController.destroy)
+router.route("/:id")
+    .get(studentController.findById)
 
 module.exports = router;
 

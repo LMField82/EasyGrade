@@ -5,17 +5,15 @@ CREATE DATABASE gradebookDB;
 USE gradebookDB;
 
 CREATE TABLE Students(
-student_id INT NOT NULL AUTO_INCREMENT,
-first_name VARCHAR(100) NOT NULL,
-last_name VARCHAR(100) NOT NULL,
-final_grade VARCHAR(3),
-PRIMARY KEY(student_id)
+student_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+first_name VARCHAR NOT NULL,
+last_name VARCHAR NOT NULL,
+final_grade VARCHAR
 );
 
 CREATE TABLE Assignments(
-assignment_id INT NOT NULL AUTO_INCREMENT,
-standard VARCHAR (225) NOT NULL,
-PRIMARY KEY (assignment_id)
+assignment_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+standard VARCHAR NOT NULL
 );
 
 CREATE TABLE Grades(

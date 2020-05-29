@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const gradeController = require("../../controllers/gradeController.js");
+//const gradeController = require("../../controllers/gradeController.js");
 
 //matches with /api/grades/
 router.route("/")

@@ -4,11 +4,14 @@ const assignmentController = require("../../controllers/assignmentController");
 //matches with /api/assignments/
 router.route("/")
     .get(assignmentController.findAll)
-    .get(assignmentController.findById)
     .post(assignmentController.create)
-    .delete(assignmentController.delete)
+    //.destroy(assignmentController.destroy)
+    
+router.route("/:id")
+    .get(assignmentController.findById)
 
 module.exports = router;
+
 
 // db = require("../../models") 
 
