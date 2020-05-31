@@ -4,6 +4,7 @@
   "description": "grade book that creates a pdf report card",
   "main": "index.js",
   "dependencies": {
+    "axios": "^0.19.2",
     "bootstrap": "^4.5.0",
     "concurrently": "^5.2.0",
     "dotenv": "^8.2.0",
